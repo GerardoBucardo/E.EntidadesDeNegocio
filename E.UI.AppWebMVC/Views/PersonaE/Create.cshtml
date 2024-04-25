@@ -1,0 +1,64 @@
+﻿@model E.EntidadesDeNegocio.PersonaE
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreE" class="control-label"></label>
+                <input asp-for="NombreE" class="form-control" />
+                <span asp-validation-for="NombreE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ApellidoE" class="control-label"></label>
+                <input asp-for="ApellidoE" class="form-control" />
+                <span asp-validation-for="ApellidoE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="FechaNacimientoE" class="control-label"></label>
+                <input type="datetime-local" asp-for="FechaNacimientoE" class="form-control" />
+                <span asp-validation-for="FechaNacimientoE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SueldoE" class="control-label"></label>
+                <input asp-for="SueldoE" class="form-control" />
+                <span asp-validation-for="SueldoE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="EstatusE" class="control-label"></label>
+                <!--<input asp-for="EstatusE" class="form-control" />-->
+                <select asp-for="EstatusE" class="form-control">
+                    <option value="1">Online</option>
+                    <option value="2">Out of line</option>
+                </select>
+                <span asp-validation-for="EstatusE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ComentarioE" class="control-label"></label>
+                <input asp-for="ComentarioE" class="form-control" />
+                <span asp-validation-for="ComentarioE" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <br />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

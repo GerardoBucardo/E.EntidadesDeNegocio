@@ -1,0 +1,67 @@
+﻿@model IEnumerable<E.EntidadesDeNegocio.PersonaE>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NombreE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimientoE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SueldoE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstatusE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComentarioE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimientoE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SueldoE)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.EstatusE)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComentarioE)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new {Id = item.Id })" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                    <a href="@Url.Action("Details", new {Id = item.Id })" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                    <a href="@Url.Action("Delete", new {Id = item.Id })" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
